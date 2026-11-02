@@ -44,31 +44,39 @@ but it contains multiple syntax errors that prevent it from being parsed.
 // 🔍 Provided JSON File with Errors
 // ============================================
 
-const invalidBookingJSON = `
+//On line 47: const invalidBookingJSON = `=> I removed this line. This is a JavaScript Object literal, not JSON.
+//On line 50: Missing a comma here to seperate the key values.
+//On line 54: name was missing quotatin marks. Keys are required to be surrounded by quotation marks.
+//On line 60: JSON does not support undefined. Changing to null
+//On line 67: Extra comma after "Parking" that has been removed. Commas should not be at the end of the arrays.
+
 {
-  "hotelName": "Grand City Hotel",
-  "checkInDate": "2024-05-15"
+  "hotelName" : "Grand City Hotel",
+  "checkInDate": "2024-05-15", 
   "checkOutDate": "2024-05-20",
   "guests": [
     {
-      name: "Alice Johnson",
+      "name": "Alice Johnson",
       "age": 30,
       "email": "alice.johnson@example.com"
     },
     {
       "name": "Bob Smith",
-      "age": undefined,
+      "age": null, 
       "email": "bob.smith@example"
     }
   ],
   "roomDetails": {
     "type": "Suite",
     "pricePerNight": 200,
-    "amenities": ["WiFi", "Breakfast", "Parking",]
+    "amenities": [
+      "WiFi", 
+      "Breakfast", 
+      "Parking"
+    ]
+  
   }
 }
-`;
-
 
 // ============================================
 // ✅ Requirements
@@ -81,6 +89,7 @@ const invalidBookingJSON = `
   • Why is it a problem in JSON?
   • What did you change to fix it?
 */
+
 
 
 // ============================================
